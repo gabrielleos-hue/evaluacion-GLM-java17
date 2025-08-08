@@ -6,16 +6,17 @@ import mx.com.gtec.ev.proyecto_evalucion.usuarios.application.model.UsuarioReque
 import mx.com.gtec.ev.proyecto_evalucion.usuarios.domain.model.UsuarioEntity;
 import mx.com.gtec.ev.proyecto_evalucion.usuarios.domain.outgoing.UsuarioLogic;
 import mx.com.gtec.ev.proyecto_evalucion.usuarios.infrastructure.adapter.UsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@RequiredArgsConstructor
 public class UsuarioService implements UsuarioLogic {
 
-    private final UsuarioRepository usuarioRepository;
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
 
     private Usuario mapToUsuario(UsuarioEntity entity) {
